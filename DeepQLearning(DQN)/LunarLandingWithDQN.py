@@ -41,7 +41,7 @@ class DQLAgent:
         # acting explore or exploit
         if np.random.rand() <= self.epsilon:
             return np.random.choice(self.action_size)
-        act_values = self.model.predict(s)
+        act_values = self.model.predict(state)
         return np.argmax(act_values[0])
     
     def replay(self,batch_size):
